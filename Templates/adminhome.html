@@ -1,0 +1,9 @@
+{% extends 'admin_navbar.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'css/ashome.css' %}" rel="stylesheet">
+<h1 align="center" style="color:blue;background-color:yellow">Hii {{ aname }}</h1>
+<marquee direction="right" behaviour="sliding" bgcolor="yellow"><h1 style="color:blue">Welcome to Admin Home Page</h1></marquee>
+<br>
+    <img src="static/images/66982lms.jpeg" align="center" width="60" height="60">
+{% endblock %}

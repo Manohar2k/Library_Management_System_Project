@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% load static %}
+<body>
+<link href="{% static 'css/register.css' %}" rel="stylesheet">
+<form action="adminregread" method="post">
+  {% csrf_token %}
+  <table align="center">
+    <tr>
+      <th colspan="2"><h1>Admin Registration</h1></th>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><h1>{{ msg }}</h1></td>
+    </tr>
+    <tr>
+      <th>User Name</th>
+      <td><input type="text" name="uname"></td>
+    </tr>
+    <tr>
+      <th>Email ID</th>
+      <td><input type="email" name="uemail"></td>
+    </tr>
+    <tr>
+      <th>Password</th>
+      <td><input type="password" name="upswd"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="adminsbmt" value="Register"></td>
+    </tr>
+  </table>
+  <br>
+    <img src="static/images/download.jpeg" align="center">
+</form>
+</body>
+</html>

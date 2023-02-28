@@ -1,0 +1,71 @@
+{% extends 'admin_navbar.html' %}
+{% block content %}
+<h2 align="center">Issue Book</h2>
+<h3 align="center">{{ msg }}</h3>
+<form method="post">
+    {% csrf_token %}
+<div style="float:left;width:620px">
+    <h1 align="center">Course and Sem Details</h1>
+    <table align="center">
+        <tr>
+            <th>Student Course</th>
+            <td><select name="ddlcourse">
+                <option>--Select Course--</option>
+                {% for i in courses %}
+                    <option>{{ i.Course_Name }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <th>Student Sem</th>
+            <td><select name="ddlsem">
+                <option>--Select Sem--</option>
+                {% for i in sems %}
+                    <option>{{ i }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="btnsbmt" value="Submit"></td>
+        </tr>
+    </table>
+</div>
+    </form>
+<form action="savebook" method="post">
+    {% csrf_token %}
+<div style="float:right;width:620px">
+    <h1 align="center">Book Details</h1>
+    <table align="center">
+        <tr>
+            <th>Student Name</th>
+            <td><select name="ddlsname">
+                <option>--Select--</option>
+                {% for i in students %}
+                    <option>{{ i.Stud_Name }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <th>Book Name</th>
+            <td><select name="ddlbook">
+                <option>--Select--</option>
+                {% for i in books %}
+                    <option>{{ i.Book_Name }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <th>Start Date</th>
+            <td><input type="date" name="sdate"></td>
+        </tr>
+        <tr>
+            <th>End Date</th>
+            <td><input type="date" name="edate"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="btnsbmt" value="Issue Book"></td>
+        </tr>
+    </table>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% load static %}
+<body>
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
+<form action="readlog" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <th colspan="2"><h1>Login Page</h1></th>
+        </tr>
+        <tr>
+            <th colspan="2" align="center"><h1>{{ msg }}</h1></th>
+        </tr>
+        <tr>
+            <th>User Name</th>
+            <td><input type="text" name="uname"></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input type="password" name="upswd">   <a href="{% url 'resetpswd' %}">Forgot Password</a> </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="logsbmt" value="Login"></td>
+        </tr>
+        <tr>
+            <td align="center"><a href="{% url 'adminreg' %}">Admin SignUp</a> </td>
+            <td align="right"><a href="{% url 'studreg' %}">Student SignUp</a></td>
+        </tr>
+    </table>
+    <br>
+    <img src="static/images/images (5).jpeg" align="center">
+</form>
+</body>
+</html>
